@@ -24,4 +24,5 @@ To clear ES (from the logstash server cmd line):
     
 To clear the sincedb:
 
-    rm ~/.sincedb_*
+    rm ~/.sincedb_* # for sincedbs crated form command line
+    rm /var/lib/logstash/.sincedb_* #for sincedbs created by daemon
