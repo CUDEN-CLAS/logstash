@@ -13,6 +13,7 @@ Contents of crontab -e:
 The gatherer script assumes passwordless ssh to the web servers as the dplagnt user. Logs are scp'ed to /data/logs.
 
 Notes for dev and testing:
+--------------------------
 
  - There are two things to be aware of if you want to clear logstash for testing.
     1. ElasticSearch stores the data.  So you will need to clear ES.
@@ -26,3 +27,12 @@ To clear the sincedb:
 
     rm ~/.sincedb_* # for sincedbs crated form command line
     rm /var/lib/logstash/.sincedb_* #for sincedbs created by daemon
+
+Troubleshooting
+---------------
+
+If logstash-web service doesn;t stop with sudo service logstash stop:
+
+    change /etc/init/logstash-web.conf
+    change the next line:
+    start on virtual-filesystems -> start on never
