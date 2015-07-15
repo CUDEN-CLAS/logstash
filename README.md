@@ -31,9 +31,9 @@ To clear the sincedb:
 Troubleshooting
 ---------------
 
-If you need to test a new config without breaking the live logstash isntance:
+If you need to test a new config on wlogstash without breaking the running config:
 
-    echo 'beboulder tweet test' | /opt/logstash/bin/logstash agent -f /data/twitter.conf
+    /opt/logstash/bin/logstash agent -f /etc/logstash/conf.d --configtest
 
 If logstash-web service doesn;t stop with sudo service logstash stop:
 
